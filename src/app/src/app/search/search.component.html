@@ -1,0 +1,25 @@
+<div class="search-section excel-search">
+  <label for="fileInput" class="btn btn-secondary">Upload Excel</label>
+  <input
+    id="fileInput"
+    type="file"
+    accept=".xls,.xlsx"
+    (change)="onExcelFileSelected($event)"
+    hidden
+  />
+</div>
+
+<div *ngIf="releasedResults.length" class="results-table">
+  <h3>Containers with “released” comments</h3>
+  <table class="table">
+    <thead>
+      <tr><th>Container</th><th>Comments</th></tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of releasedResults">
+        <td>{{ item.container }}</td>
+        <td>{{ item.comments }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
