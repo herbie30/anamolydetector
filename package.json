@@ -20,7 +20,7 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.14.6",
     "rxjs": "^6.3.3",
-    "zone.js": "~0.11.4",         ← updated to satisfy @angular/core@12.2.0  
+    "zone.js": "~0.11.4",           
     "xlsx": "^0.18.5"
   },
   "scripts": {
@@ -32,11 +32,11 @@
     "e2e": "npx --no-install ng e2e"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.2.0",  ← aligned with Angular 12  
-    "@angular/cli": "~12.2.0",                    ← aligned with Angular 12  
-    "@angular/compiler-cli": "~12.2.0",           ← aligned with Angular 12  
-    "@angular/language-service": "~12.2.0",       ← aligned with Angular 12  
-    "@types/node": "~12.11.1",                    ← compatible with Angular 12 toolchain  
+    "@angular-devkit/build-angular": "~12.2.0",  
+    "@angular/cli": "~12.2.0",                     
+    "@angular/compiler-cli": "~12.2.0",             
+    "@angular/language-service": "~12.2.0",         
+    "@types/node": "~12.11.1",                     
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^6.0.0",
