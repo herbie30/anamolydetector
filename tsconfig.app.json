@@ -1,17 +1,17 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    // where to write the compiled app files
+   
     "outDir": "../out-tsc/app",
-    // don’t pull in any ambient types by default
+    
     "types": []
   },
-  // the entrypoints for your application
+  
   "files": [
     "main.ts",
     "polyfills.ts"
   ],
-  // include any custom .d.ts you’ve added
+ 
   "include": [
     "**/*.d.ts"
   ]
