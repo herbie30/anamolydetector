@@ -1,1 +1,9 @@
-16
+[build]
+  # 1) tell mise to honor .nvmrc, then do a clean install + build
+  command = "mise settings add idiomatic_version_file_enable_tools node && npm ci && npm run build"
+  publish = "dist/anamolydetector"
+
+[build.environment]
+  # optional: fallback Node version if .nvmrc is missing
+  NODE_VERSION = "16"
+
