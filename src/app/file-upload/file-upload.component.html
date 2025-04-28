@@ -23,7 +23,7 @@
         <div class="card-body">
           <h5 class="card-title">CYMAN Files</h5>
           <div class="custom-file mb-3">
-            <input type="file" class="custom-file-input" id="cymanFiles" multiple (change)="oncymanFileChange($event)">
+            <input type="file" class="custom-file-input" id="cymanFiles" multiple (change)="onCymanFileChange($event)">
             <label class="custom-file-label" for="cymanFiles">Choose CYMAN files</label>
           </div>
           <div class="selected-files">
@@ -39,9 +39,25 @@
   
   <div class="row mt-3">
     <div class="col-12">
-      <button class="btn btn-primary" (click)="uploadFiles()" [disabled]="!topsFiles.length && !cymanFiles.length">
-        Upload Files
+      <!-- Run Comparison button -->
+      <button class="btn btn-primary" (click)="uploadFiles()" [disabled]="!topsFiles.length || !cymanFiles.length">
+        Run Comparison
       </button>
+    </div>
+  </div>
+
+  <!-- Differences display -->
+  <div class="row mt-3" *ngIf="differences">
+    <div class="col-12">
+      <div *ngIf="differences.length > 0; else noDiffs">
+        <h5>Differences Found:</h5>
+        <ul>
+          <li *ngFor="let diff of differences">{{ diff }}</li>
+        </ul>
+      </div>
+      <ng-template #noDiffs>
+        <p>None found.</p>
+      </ng-template>
     </div>
   </div>
 </div>
