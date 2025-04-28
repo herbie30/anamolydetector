@@ -23,7 +23,7 @@ export class FileUploadComponent {
     }
   }
 
-  onCymanFileChange(event: Event): void {
+  oncymanFileChange(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (!input.files) { return; }
     const filesArray: File[] = Array.from(input.files);
