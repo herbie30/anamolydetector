@@ -32,7 +32,7 @@ export class FileUploadComponent {
 
 
   
-  oncymanFilesFileChange(event: Event): void {
+  oncymanFileChange(event: Event): void {
   // 1. Tell TypeScript this is an HTML file input
   const input = event.target as HTMLInputElement;
 
