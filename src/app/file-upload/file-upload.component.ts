@@ -10,23 +10,48 @@ export class FileUploadComponent {
   cymanFiles: File[] = [];
   maxFiles = 4;
 
-  onTopsFileChange(event: any) {
-    const files = event.target.files;
-    if (files.length + this.topsFiles.length <= this.maxFiles) {
-      this.topsFiles = [...this.topsFiles, ...Array.from(files)];
-    } else {
-      alert(`You can only upload up to ${this.maxFiles} TOPS files`);
-    }
+ onTopsFileChange(event: Event): void {
+  // 1. Tell TypeScript this is an HTML file input
+  const input = event.target as HTMLInputElement;
+
+  // 2. If no files were chosen, exit early
+  if (!input.files) {
+    return;
   }
 
-  onCymanFileChange(event: any) {
-    const files = event.target.files;
-    if (files.length + this.cymanFiles.length <= this.maxFiles) {
-      this.cymanFiles = [...this.cymanFiles, ...Array.from(files)];
-    } else {
-      alert(`You can only upload up to ${this.maxFiles} CYMAN files`);
-    }
+  // 3. Turn FileList → File[]
+  const filesArray: File[] = Array.from(input.files);
+
+  // 4. Enforce your maxFiles limit
+  if (filesArray.length + this.topsFiles.length <= this.maxFiles) {
+    this.topsFiles = [...this.topsFiles, ...filesArray];
+  } else {
+    alert(`You can only upload up to ${this.maxFiles} TOPS files`);
   }
+}
+
+
+  
+  oncymanFilesFileChange(event: Event): void {
+  // 1. Tell TypeScript this is an HTML file input
+  const input = event.target as HTMLInputElement;
+
+  // 2. If no files were chosen, exit early
+  if (!input.files) {
+    return;
+  }
+
+  // 3. Turn FileList → File[]
+  const filesArray: File[] = Array.from(input.files);
+
+  // 4. Enforce your maxFiles limit
+  if (filesArray.length + this.cymanFiles.length <= this.maxFiles) {
+    this.topsFiles = [...this.cymanFiles, ...filesArray];
+  } else {
+    alert(`You can only upload up to ${this.maxFiles} cymanFiles files`);
+  }
+}
+
 
   removeTopsFile(index: number) {
     this.topsFiles = this.topsFiles.filter((_, i) => i !== index);
