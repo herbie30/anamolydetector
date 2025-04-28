@@ -26,7 +26,7 @@
   "scripts": {
     "ng": "npx --no-install ng",
     "start": "npx --no-install ng serve",
-    "build": "npx --no-install ng build",
+    "build": "ng build --configuration production"
     "test": "npx --no-install ng test",
     "lint": "npx --no-install ng lint",
     "e2e": "npx --no-install ng e2e"
