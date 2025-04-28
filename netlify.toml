@@ -1,9 +1,9 @@
 [build]
-  # This is the command Netlify will run to build your Angular app.
-  # We point it at the “build” script in package.json, which we’ll update next.
-  command = "npm run build"
+  # Clean install + production build
+  command   = "npm ci && npm run build"
+  publish   = "dist/anamolydetector"
 
-  # This is the folder Netlify will upload as your live site.
-  # It needs to match the “outputPath” in your angular.json (by default it's dist/your-app-name).
-  publish = "dist/anamolydetector"
+[build.environment]
+  # Force Netlify to use Node 16 (or your chosen major version)
+  NODE_VERSION = "16"
 
