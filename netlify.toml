@@ -5,7 +5,7 @@
 
 [build.environment]
     # Pin Node if you haven’t yet:
-  NODE_VERSION  = "16"
+  NODE_VERSION  = "18"
   # Work around the OpenSSL3 initialization error:
  
 
