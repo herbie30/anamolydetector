@@ -7,5 +7,5 @@
     # Pin Node if you haven’t yet:
   NODE_VERSION  = "16"
   # Work around the OpenSSL3 initialization error:
-  NODE_OPTIONS  = "--openssl-legacy-provider"
+ 
 
