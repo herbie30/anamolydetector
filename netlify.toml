@@ -4,6 +4,8 @@
   publish   = "dist/anamolydetector"
 
 [build.environment]
-  # Force Netlify to use Node 16 (or your chosen major version)
-  NODE_VERSION = "16"
+    # Pin Node if you haven’t yet:
+  NODE_VERSION  = "16"
+  # Work around the OpenSSL3 initialization error:
+  NODE_OPTIONS  = "--openssl-legacy-provider"
 
